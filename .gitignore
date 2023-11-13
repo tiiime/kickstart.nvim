@@ -2,3 +2,5 @@ tags
 test.sh
 .luarc.json
 nvim
+config/local.properties
+./config/local.properties
