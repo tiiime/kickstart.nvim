@@ -1,3 +1,5 @@
+local g = vim.g
+
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
@@ -13,6 +15,6 @@ return {
     require('neo-tree').setup({
         enable_git_status = false
     })
-    vim.keymap.set("n", "<M-1>", ":Neotree toggle<cr>")
+    vim.keymap.set("n", "<" .. g.space_lhs .. "-1>", ":Neotree toggle<cr>")
   end,
 }

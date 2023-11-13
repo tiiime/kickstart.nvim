@@ -40,6 +40,8 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+require("core")
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -300,7 +302,7 @@ require('telescope').setup {
       i = {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
-        ['M-e'] = require('telescope.builtin').buffers,
+        [vim.g.space_lhs .. '-e'] = require('telescope.builtin').buffers,
         ['<Del>'] = require('telescope.actions').delete_buffer
       },
     },
