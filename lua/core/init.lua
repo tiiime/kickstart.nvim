@@ -28,7 +28,7 @@ end
 local config = read_local_config_file()
 
 if config == nil then
-	return
+	error("请检查配置文件 config/local.properties，或者复制 config/default.properties 到 config/lcoal.properties。")
 end
 
 for k, v in pairs(config) do
