@@ -9,3 +9,13 @@ opt.foldenable = false
 opt.foldlevel = 99
 
 vim.keymap.set("n", "<" ..g.space_lhs .. "-e>", ":Telescope buffers<cr>")
+
+vim.api.nvim_create_user_command(
+    'Config',
+    function ()
+        require('telescope.builtin').find_files({cwd=vim.fn.stdpath("config")})
+    end,
+    {}
+)
+
+
